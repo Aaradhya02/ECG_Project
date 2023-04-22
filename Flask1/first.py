@@ -98,7 +98,7 @@ def detect_diseases_from_ecg_file(filename):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    print(os.getcwd())
+ 
     if request.method == 'POST':
         file = request.files['file']
         filename = file.filename
