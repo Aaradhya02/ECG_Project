@@ -110,4 +110,4 @@ def index():
 
 if __name__ == '__main__':
     app.config['UPLOAD_FOLDER'] = 'uploads'
-    app.run(debug=True)
+    app.run(debug=False)
