@@ -1,0 +1,190 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Data Website</title>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0 auto;
+      font-family: Arial, sans-serif;
+      background-color: #010101;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(127, 255, 0);
+      background-color: rgb(14, 14, 13);
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      font-size: 30px ;
+    }
+
+    a {
+      padding: 5%;
+      color: rgb(233, 215, 170);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: yellow;
+    }
+
+    nav {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 200%;
+      text-align: center;
+      padding: 50px;
+      background-color: rgb(99, 96, 91);
+    }
+
+    h2{
+      color: chartreuse;
+      font-size: 25px;
+    }
+
+    h4{
+      color: rgb(255, 255, 255);
+    }
+
+    p {
+      color: aliceblue;
+    }
+
+    input[type="submit"] {
+      background-color: chartreuse;
+      border: none;
+      color: #000000;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(127, 255, 0);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="button"] {
+      background-color: chartreuse;
+      border: none;
+      color: #000000;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px rgba(127, 255, 0);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="button"]:hover {
+      background-color: #2e2e2e;
+    }
+  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styleecg.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Remote Patient Heart Monitoring!</h1>
+    </header>
+    <main>
+        <nav>
+            <a href="#">Home</a> &nbsp;
+            <a href="#" onclick="openProductPage()">Products</a> &nbsp;
+            <a href="#" onclick="displayAboutUs()">About us</a>
+        </nav>
+        <br>
+        <hr>
+
+        <section>
+
+              <h2>Click here to get ECG</h2>
+              <br>
+              <input type="button" value="GET ECG" onclick="goToECGServer()">
+
+        </section>
+        <br>
+        <br>
+        <hr>
+
+
+        <section>
+
+              <h2>Upload your ECG data to Get Test Results.</h2>
+
+
+
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <input type="file" name="file" id="file">
+        <br>
+        <br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+              <br>
+
+
+              <h4> Accepted files (.csv)</h4>
+
+        </section>
+
+        <hr>
+
+
+
+
+        <script>
+          function goToECGServer() {
+        window.open("http://10.100.100.10/", "_blank");
+    }
+            function openProductPage() {
+                window.location.href = "comingsoon.html";
+            }
+            function displayAboutUs() {
+                var aboutUs = document.getElementById("aboutUs");
+                aboutUs.style.display = "block";
+            }
+        </script>
+
+          <section id="aboutUs" style="display:none;">
+            <h2>Our Team</h2>
+            <ul style="list-style-type: none;">
+                <li>Anvay Parwekar (Instrumentation and Control)</li>
+                <li>Aaradhya Nachankar (Instrumentation and Control)</li>
+                <li>Abhishek Dixit (Instrumentation and Control)</li>
+            </ul>
+            <p>
+                This team is working hard to make a low-cost, high-accuracy heart monitoring system which will be very helpful for heart patients to easily check ECG, heart rate, and diagnose any heart-related disease. Hope we will come up with this product soon.
+            </p>
+        </section>
+
+
+        <section>
+            <h2> Useful Videos </h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RYZ4daFwMa8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="100%" ></iframe>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/deEiRCvekTU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="100%"></iframe>
+            <br>
+            <br>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/iT3cVVK74tU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="100%"></iframe>
+        </section>
+
+
+
+    </main>
+    </body>
+    </html>
