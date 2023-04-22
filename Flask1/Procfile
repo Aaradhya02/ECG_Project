@@ -1,1 +1,0 @@
-web: gunicorn Smart_ECG:app
